@@ -21,7 +21,7 @@ To run this project, you will need to prepare your yandex cloud, get
 ```
 YC_TOKEN=$(yc iam create-token)
 YC_CLOUD_ID=$(yc config get cloud-id)
-YC_CLOUD_ID=$(yc config get folder-id)
+YC_FOLDER_ID=$(yc config get folder-id)
 ```
 and substiude theire in terraform.tfvars like
 

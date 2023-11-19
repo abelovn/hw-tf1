@@ -4,11 +4,13 @@ variable "zone" {
 }
 
 variable "cloud_id" {
-  type = string
+  type    = string
+  default = var.YC_FOLDER_ID
 }
 
 variable "folder_id" {
-  type = string
+  type    = string
+  default =  var.YC_CLOUD_ID
 }
 
 variable "image_id" {
@@ -17,7 +19,8 @@ variable "image_id" {
 }
 
 variable "yc_token" {
-  type = string
+  type    = string
+  default = var.YC_TOKEN
 }
 
 variable "user_name" {
