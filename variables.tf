@@ -23,9 +23,6 @@ variable "yc_token" {
 variable "user_name" {
   description = "Name of the user"
   type        = string
+  default     = "cloud-user"
 }
 
-variable "user_name_test" {
-  description = "Name of the test user"
-  type        = string
-}
