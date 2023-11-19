@@ -1,3 +1,4 @@
+
 # HW1 
 
 Homework
@@ -15,19 +16,35 @@ rewire nginx using ansible
 
 
 
+
 ## Pre-requirements
 
-To run this project, you will need to prepare your yandex cloud, get 
-```
-YC_TOKEN=$(yc iam create-token)
-YC_CLOUD_ID=$(yc config get cloud-id)
-YC_FOLDER_ID=$(yc config get folder-id)
-```
-and substiude theire in terraform.tfvars like
+To run this project, you will need to prepare your yandex cloud, 
 
-```
-cloud_id                 = <"YC_CLOUD_ID">
-folder_id                = <"YC_CLOUD_ID">
-yc_token                 = <"YC_TOKEN">
 
+and then set environment variables:
 ```
+export TF_VAR_yc_token=$(yc iam create-token)
+export TF_VAR_cloud_id=$(yc config get cloud-id)
+export TF_VAR_folder_id=$(yc config get folder-id
+```
+in this case the terraform.tfvars file is not needed
+
+
+Also be sure that there is a private/public key mapping at the path ~/.ssh/id_rsa,
+else do it via 
+```
+ssh-keygen
+```
+
+
+
+## Deployment
+
+To deploy this project run
+
+```bash
+  git clone https://github.com/abelovn/hw-tf1.git && cd hw-tf1 && terraform init && terraform plan && terraform apply  -auto-approve
+```
+
+
